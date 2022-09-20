@@ -28,7 +28,8 @@ function addMovie(event) {
 
 function deleteMovie(event) {
     event.target.parentNode.remove();
-    message.textContent = 'Movie Deleted!'
+    message.textContent = 'Movie Deleted!';
+    revealMessage();
 }
 
 function crossOffMovie(event) {
@@ -38,5 +39,13 @@ function crossOffMovie(event) {
     } else {
         message.textContent = 'Movie added back!';
     }
+    revealMessage();
+}
 
+function revealMessage(){
+    message.classList.remove('hide');
+
+    setTimeout(() => {
+        message.classList.add('hide');
+    }, 1000);
 }
